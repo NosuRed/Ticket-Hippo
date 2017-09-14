@@ -17,14 +17,15 @@ public abstract class GenericTicket {
     public abstract boolean isPlaceValidToday();
 
 
-    public Boolean modAccountBalance(Double amount) {
 
-        /**
-         * parameter: is the "amount" that gets added or subtracted from the customers bank account
-         * creates the variable newAccountBalance, the old balance will be added or subtracted with the "amonunt"
-         * return: if the newAccountBalance is withing the allowed limits the account Balance will be changed to the new account balance
-         * return: else the newAccountBalance is out of bounds of the limits it will return false
-         */
+
+    /**
+     * the method changes the AccountBalance by the determined amount
+     * @param amount is a double it represents the amount of money that is either added or subtracted
+     * if the amount is valid, the AccountBalance will be change accordingly
+     * @return  if the transaction succeeded or not
+     */
+    public Boolean modAccountBalance(Double amount) {
         Double newAccountBalance = AccountBalance + amount;
         if (newAccountBalance >= minAccountBalance &&
                 newAccountBalance <= maxAccountBalance) {

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 public class Customer {
     String firstName, lastName;
     LocalDate birthDate;
+
     // Parameter are given to the constructor to create a customer
     public  Customer(String FirstName, String LastName, LocalDate BirthDate){
         firstName = FirstName;
@@ -19,7 +20,7 @@ public class Customer {
     }
 
 
-    // Sets the parameters for the ticket
+    // Sets the parameters for the ticket. Every ticket is a generic ticket
     public void setTicket(GenericTicket ticket) {
         this.ticket = ticket;
     }

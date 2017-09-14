@@ -8,16 +8,20 @@ public class TicketTestSystem {
 
     public static void main(String[] args) {
 
-        /*
+        Member newMember = new Member("David","Behrens",LocalDate.of(1994,7,11),9999);
         Customer newGuest1 = new Customer("Philipp","Behrens", LocalDate.of(1994,7,11));
         newGuest1.setTicket(new GuestTicket(LocalDate.of(2017,9,15),10));
 
+        newMember.setTicket(new SeasonTicket(LocalDate.of(2017,1,1),LocalDate.of(2017,12,31),95555,55));
+        System.out.println(newMember.isMember());
+        System.out.println(newMember.getBirthDate());
+        System.out.println(newMember.getMemberID());
         Entry entry = new Entry();
         System.out.println(entry.checkName(newGuest1));
         System.out.println(entry.checkTicket(newGuest1));
-        */
 
 
+        /*
         //Enable Testing! It starts here :)
         // is old enough to buy anything
         Member member1 = new Member("Nosu", "Red", LocalDate.of(1994, 7, 11));
