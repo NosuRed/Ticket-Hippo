@@ -4,17 +4,14 @@ import java.time.LocalDate;
 public class SeasonTicket extends GenericTicket {
     private LocalDate startOfSeason;
     private LocalDate endOfSeason;
-    private int memberId;
+
 
     // Constructor for the season ticket. takes the parameters for construction of the season
-    public SeasonTicket(LocalDate startOfSeason, LocalDate endOfSeason, int memberId, int block, int seat) {
+    public SeasonTicket(LocalDate startOfSeason, LocalDate endOfSeason, int block, int seat) {
 
         // a season ticket has a duration, so two dates are needed.
         setStartOfSeason(startOfSeason);
         setEndOfSeason(endOfSeason);
-
-        // a member ID is required
-        setMemberId(memberId);
         // We call the setters for block and seat to declare these for the ticket
         setBlock(block);
         setSeat(seat);
@@ -40,13 +37,6 @@ public class SeasonTicket extends GenericTicket {
         this.endOfSeason = endOfSeason;
     }
 
-    public int getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
-    }
 
     @Override
     public boolean isPlaceValid() {
