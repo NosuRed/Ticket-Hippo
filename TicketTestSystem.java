@@ -7,30 +7,39 @@ import java.util.Scanner;
 public class TicketTestSystem {
 
     public static void main(String[] args) {
+        String BORDER = "~~~~~~~~~~~~~~~~";
+
+        /*
+         this block is used to showcase the case of checking the name and last name on the ticket,
+         to show that we can determine a member with a boolean value,
+         that we can set a member id
+         */
 
         Member newMember = new Member("David","Behrens",LocalDate.of(1994,7,11),9999);
         Customer newGuest1 = new Customer("Philipp","Behrens", LocalDate.of(1994,7,11));
-        newGuest1.setTicket(new GuestTicket(LocalDate.of(2017,9,15),10));
-
+        newGuest1.setTicket(new GuestTicket(LocalDate.of(2017,9,14),10));
         newMember.setTicket(new SeasonTicket(LocalDate.of(2017,1,1),LocalDate.of(2017,12,31),95555,55));
+
         System.out.println(newMember.isMember());
         System.out.println(newMember.getBirthDate());
-        System.out.println(newMember.getMemberID());
+        System.out.println("Checks if a member is considered a member: " +" This will return true: " + newMember.isMember());
+        System.out.println("Checks if a guest is a member, " +  "since guests can't be members it will return:" + " " + newGuest1.isMember());
+        System.out.println(BORDER);
         Entry entry = new Entry();
         System.out.println(entry.checkName(newGuest1));
         System.out.println(entry.checkTicket(newGuest1));
 
 
         /*
-        //Enable Testing! It starts here :)
+        //Enable other tests! It starts here :)
         // is old enough to buy anything
-        Member member1 = new Member("Nosu", "Red", LocalDate.of(1994, 7, 11));
+        Member member1 = new Member("Nosu", "Red", LocalDate.of(1994, 7, 11),1);
 
         // member2 is not old enough to buy alcohol
-        Member member2 = new Member("Kuroha","Demon",LocalDate.of(2010,12,24));
+        Member member2 = new Member("Kuroha","Demon",LocalDate.of(2010,12,24),2);
 
         // membership expired
-        Member member3 = new Member("Aku","Metzu",LocalDate.of(1994,7,11));
+        Member member3 = new Member("Aku","Metzu",LocalDate.of(1994,7,11),3);
 
 
         // guest1 is younger than 18 and should only be able to buy beverage for his age
@@ -49,13 +58,13 @@ public class TicketTestSystem {
         Customer dailyTicket2 = new Customer("Yorika","Demon",LocalDate.of(1995,6,10));
 
 
-        member1.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 12, 31), member1.getMemberID(),14, 14));
-        member2.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 12, 15), member1.getMemberID(),5, 16));
-        member3.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 6, 15), member1.getMemberID(),5, 16));
+        member1.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 12, 31), member1.getMemberID(),14));
+        member2.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 12, 15), member1.getMemberID(),5));
+        member3.setTicket(new SeasonTicket(LocalDate.of(2017, 1, 1),LocalDate.of(2017, 6, 15), member1.getMemberID(),5));
         guest1.setTicket(new GuestTicket(LocalDate.now(), 0));
         guest2.setTicket(new GuestTicket(LocalDate.now(), 5));
-        guest3.setTicket(new GuestTicket(LocalDate.now(), 100));
-        dailyTicket1.setTicket(new DayTicket(LocalDate.now(),10,100));
+        guest3.setTicket(new GuestTicket(LocalDate.now(), 15));
+        dailyTicket1.setTicket(new DayTicket(LocalDate.now(),10,15));
         dailyTicket2.setTicket(new DayTicket(LocalDate.of(2016, 1, 11), 15, 99));
 
 
@@ -167,7 +176,7 @@ public class TicketTestSystem {
         bar.order("Beer", guest2);
 
         System.out.println("~~~~~~~~~~~~~~");
-        //Remove this and the one at the beginning to enable testing!*/
+        //Remove this and the one at the beginning to enable the test!*/
 
 
     }

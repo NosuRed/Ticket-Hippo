@@ -52,6 +52,7 @@ public class SeasonTicket extends GenericTicket {
 
     @Override
     public boolean isPlaceValidToday() {
+        // the seasons duration is set when creating a season ticket
         // checks if the ticket is already valid or expired. Returns a boolean
         return(startOfSeason.compareTo(LocalDate.now()) < 0 && endOfSeason.compareTo(LocalDate.now()) > 0 );
 

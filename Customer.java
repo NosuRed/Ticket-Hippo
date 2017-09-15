@@ -5,6 +5,13 @@ public class Customer {
     String firstName, lastName;
     LocalDate birthDate;
 
+    /**
+     * This constructor creates the costumer
+     *
+     * @param FirstName sets the first name
+     * @param LastName sets the last name
+     * @param BirthDate sets the birth day
+    */
     // Parameter are given to the constructor to create a customer
     public  Customer(String FirstName, String LastName, LocalDate BirthDate){
         firstName = FirstName;
@@ -28,7 +35,7 @@ public class Customer {
 
 
 
-
+    // is false on default, is called in the Member class
     public boolean isMember(){
         return false;
     }
