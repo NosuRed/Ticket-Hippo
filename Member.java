@@ -3,7 +3,16 @@ import java.time.LocalDate;
 public class Member extends Customer {
     private int memberID;
 
-    // constructor for the creation of a Member that is used for the season ticket
+    /**
+     * the Member extends from customer and is used to set the members information
+     * everything except the MemberID is called from the super
+     * used to set a member ID
+     * @param FirstName set the first name
+     * @param LastName set zhe last name
+     * @param BirthDate set the birth date
+     * @param MemberID sets the member id
+     *
+     */
     Member(String FirstName, String LastName, LocalDate BirthDate, int MemberID) {
         // takes the Information from the Super class Customer
         super(FirstName, LastName, BirthDate);
