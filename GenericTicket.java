@@ -3,17 +3,17 @@
 
 public abstract class GenericTicket {
     // declaring a static min and a max account balance
-    static Double minAccountBalance = 0.0, maxAccountBalance = 50.0;
+    static private final Double minAccountBalance = 0.0, maxAccountBalance = 50.0;
 
     // we only want classes that extend from GenericTicket to use these
     protected int block;
     protected int seat;
 
-    // the default account balance
+    // account balance, its 0 euro by default
     private Double AccountBalance = 0.0;
 
     // abstract classes for the other tickets to use. Is used to see if the ticket is valid
-    public abstract boolean isPlaceValid();
+    public abstract boolean isPlaceValid();// to do
     public abstract boolean isPlaceValidToday();
 
 
@@ -40,7 +40,7 @@ public abstract class GenericTicket {
         return block;
     }
 
-    // sets the block for the ticket
+
     public void setBlock(int block) {
             this.block = block;
     }
@@ -54,7 +54,6 @@ public abstract class GenericTicket {
             this.seat = seat;
     }
 
-    // returns the current account balance
     public Double getAccountBalance() {
         return AccountBalance;
     }
