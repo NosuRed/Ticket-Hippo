@@ -2,17 +2,25 @@ import java.time.LocalDate;
 
 
 public class Customer {
-    String firstName, lastName;
-    LocalDate birthDate;
-
-    // Parameter are given to the constructor to create a customer
-    public  Customer(String FirstName, String LastName, LocalDate BirthDate){
-        firstName = FirstName;
-        lastName = LastName;
-        birthDate = BirthDate;}
-
+    public String firstName, lastName;
+    public LocalDate birthDate;
     // creating a ticket. It always is a Generic Ticket
     private  GenericTicket ticket;
+
+    /**
+     * This constructor creates the costumer
+     *
+     * @param firstName sets the first name
+     * @param LastName sets the last name
+     * @param birthDate sets the birth day
+    */
+    // Parameter are given to the constructor to create a customer
+    public  Customer(String firstName, String LastName, LocalDate birthDate){
+        this.firstName = firstName;
+        this.lastName = LastName;
+        this.birthDate = birthDate;
+    }
+
 
     // returns the birth date of the customer
     public LocalDate getBirthDate() {
@@ -26,9 +34,7 @@ public class Customer {
     }
 
 
-
-
-
+    // is false on default, is called in the Member class
     public boolean isMember(){
         return false;
     }

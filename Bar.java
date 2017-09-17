@@ -4,9 +4,10 @@ import java.time.temporal.ChronoUnit;
 
 public class Bar {
 
-    Hashtable<String, Beverage> availableBeverages = new Hashtable<>();
+    private Hashtable<String, Beverage> availableBeverages = new Hashtable<>();
 
-    // add the beverages to the Hashtable
+    // add the beverages to the hashtable
+
     public void addBeverage(Beverage beverage) {
         availableBeverages.put(beverage.getName(), beverage);
     }
@@ -28,9 +29,15 @@ public class Bar {
         }
     }
 
-    // returns a boolean
-    private boolean checkAge(LocalDate birthDate, Beverage beverage) {
+    /**
+     * this method uses ChronoUnit to check how many years have past between two dates
+     * this is used to calculate the age of the customer
+     * @param birthDate gets the age of the customer
+     * @param b gets the age requirement that is that in a beverage
+     * @return returns true if customer is old enough to buy a beverage, other wise it will be false
+     */
+    private boolean checkAge(LocalDate birthDate, Beverage b) {
         // calculates the age between the birth date and the local date.
-        return ChronoUnit.YEARS.between(birthDate, LocalDate.now()) >= beverage.isMinimumAgeRequirement();
+        return ChronoUnit.YEARS.between(birthDate, LocalDate.now()) >= b.isMinimumAgeRequirement();
     }
 }

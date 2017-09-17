@@ -1,10 +1,13 @@
 import java.time.LocalDate;
 
 public abstract class PublicTicket extends GenericTicket {
+    /* Daily and guest tickets have a time limit of one day*/
     private LocalDate setDay;
-    // constructor that set creates a public ticket
-
-
+    /**
+     * @param setDay the date of when the ticket is valid is set here
+     * @param setBlock the block for ticket is set here
+     * @param setSeat the set for the ticket is set here
+     */
     public PublicTicket(LocalDate setDay, int setBlock, int setSeat) {
         this.setDay = setDay;
         this.seat = setSeat;
